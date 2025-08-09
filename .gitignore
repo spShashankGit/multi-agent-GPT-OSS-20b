@@ -5,7 +5,6 @@ __pycache__/
 
 # Ignore data only metadata is allowed to push to git - due to size constraint
 data/*.zip
-BTS
 # C extensions
 *.so
 
