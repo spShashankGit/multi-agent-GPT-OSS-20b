@@ -1,0 +1,321 @@
+{
+    "@context": {
+        "@language": "en",
+        "@vocab": "https://schema.org/",
+        "citeAs": "cr:citeAs",
+        "column": "cr:column",
+        "conformsTo": "dct:conformsTo",
+        "cr": "http://mlcommons.org/croissant/",
+        "data": {
+            "@id": "cr:data",
+            "@type": "@json"
+        },
+        "dataBiases": "cr:dataBiases",
+        "dataCollection": "cr:dataCollection",
+        "dataType": {
+            "@id": "cr:dataType",
+            "@type": "@vocab"
+        },
+        "dct": "http://purl.org/dc/terms/",
+        "extract": "cr:extract",
+        "field": "cr:field",
+        "fileProperty": "cr:fileProperty",
+        "fileObject": "cr:fileObject",
+        "fileSet": "cr:fileSet",
+        "format": "cr:format",
+        "includes": "cr:includes",
+        "isEnumeration": "cr:isEnumeration",
+        "isLiveDataset": "cr:isLiveDataset",
+        "jsonPath": "cr:jsonPath",
+        "key": "cr:key",
+        "md5": "cr:md5",
+        "parentField": "cr:parentField",
+        "path": "cr:path",
+        "personalSensitiveInformation": "cr:personalSensitiveInformation",
+        "recordSet": "cr:recordSet",
+        "references": "cr:references",
+        "regex": "cr:regex",
+        "repeated": "cr:repeated",
+        "replace": "cr:replace",
+        "sc": "https://schema.org/",
+        "separator": "cr:separator",
+        "source": "cr:source",
+        "subField": "cr:subField",
+        "transform": "cr:transform",
+        "wd": "https://www.wikidata.org/wiki/"
+    },
+    "alternateName": "Gender submission and test file merged",
+    "conformsTo": "http://mlcommons.org/croissant/1.0",
+    "license": {
+        "@type": "sc:CreativeWork",
+        "name": "CC0: Public Domain",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+    },
+    "distribution": [
+        {
+            "contentUrl": "https://www.kaggle.com/api/v1/datasets/download/brendan45774/test-file",
+            "contentSize": "11.244 KB",
+            "encodingFormat": "application/zip",
+            "@id": "archive.zip",
+            "@type": "cr:FileObject",
+            "name": "archive.zip",
+            "description": "Archive containing all the contents of the Titanic dataset dataset"
+        },
+        {
+            "contentUrl": "tested.csv",
+            "containedIn": {
+                "@id": "archive.zip"
+            },
+            "encodingFormat": "application/vnd.ms-excel",
+            "@id": "tested.csv_fileobject",
+            "@type": "cr:FileObject",
+            "name": "tested.csv",
+            "description": "Tested and gender submission dataset"
+        }
+    ],
+    "recordSet": [
+        {
+            "field": [
+                {
+                    "dataType": [
+                        "sc:Text"
+                    ],
+                    "source": {
+                        "fileObject": {
+                            "@id": "tested.csv_fileobject"
+                        },
+                        "extract": {
+                            "column": "PassengerId"
+                        }
+                    },
+                    "@id": "tested.csv/PassengerId",
+                    "@type": "cr:Field",
+                    "name": "PassengerId",
+                    "description": "Passenger number"
+                },
+                {
+                    "dataType": [
+                        "sc:Integer"
+                    ],
+                    "source": {
+                        "fileObject": {
+                            "@id": "tested.csv_fileobject"
+                        },
+                        "extract": {
+                            "column": "Survived"
+                        }
+                    },
+                    "@id": "tested.csv/Survived",
+                    "@type": "cr:Field",
+                    "name": "Survived",
+                    "description": "0 = Dead\n1 = Alive"
+                },
+                {
+                    "dataType": [
+                        "sc:Integer"
+                    ],
+                    "source": {
+                        "fileObject": {
+                            "@id": "tested.csv_fileobject"
+                        },
+                        "extract": {
+                            "column": "Pclass"
+                        }
+                    },
+                    "@id": "tested.csv/Pclass",
+                    "@type": "cr:Field",
+                    "name": "Pclass",
+                    "description": "1 = First class\n2 = Second class\n3 = Third class"
+                },
+                {
+                    "dataType": [
+                        "sc:Text"
+                    ],
+                    "source": {
+                        "fileObject": {
+                            "@id": "tested.csv_fileobject"
+                        },
+                        "extract": {
+                            "column": "Name"
+                        }
+                    },
+                    "@id": "tested.csv/Name",
+                    "@type": "cr:Field",
+                    "name": "Name",
+                    "description": "Name of passenger"
+                },
+                {
+                    "dataType": [
+                        "sc:Text"
+                    ],
+                    "source": {
+                        "fileObject": {
+                            "@id": "tested.csv_fileobject"
+                        },
+                        "extract": {
+                            "column": "Sex"
+                        }
+                    },
+                    "@id": "tested.csv/Sex",
+                    "@type": "cr:Field",
+                    "name": "Sex",
+                    "description": "Gender"
+                },
+                {
+                    "dataType": [
+                        "sc:Float"
+                    ],
+                    "source": {
+                        "fileObject": {
+                            "@id": "tested.csv_fileobject"
+                        },
+                        "extract": {
+                            "column": "Age"
+                        }
+                    },
+                    "@id": "tested.csv/Age",
+                    "@type": "cr:Field",
+                    "name": "Age",
+                    "description": "Age of passenger"
+                },
+                {
+                    "dataType": [
+                        "sc:Integer"
+                    ],
+                    "source": {
+                        "fileObject": {
+                            "@id": "tested.csv_fileobject"
+                        },
+                        "extract": {
+                            "column": "SibSp"
+                        }
+                    },
+                    "@id": "tested.csv/SibSp",
+                    "@type": "cr:Field",
+                    "name": "SibSp",
+                    "description": "Number of siblings"
+                },
+                {
+                    "dataType": [
+                        "sc:Integer"
+                    ],
+                    "source": {
+                        "fileObject": {
+                            "@id": "tested.csv_fileobject"
+                        },
+                        "extract": {
+                            "column": "Parch"
+                        }
+                    },
+                    "@id": "tested.csv/Parch",
+                    "@type": "cr:Field",
+                    "name": "Parch",
+                    "description": "."
+                },
+                {
+                    "dataType": [
+                        "sc:Text"
+                    ],
+                    "source": {
+                        "fileObject": {
+                            "@id": "tested.csv_fileobject"
+                        },
+                        "extract": {
+                            "column": "Ticket"
+                        }
+                    },
+                    "@id": "tested.csv/Ticket",
+                    "@type": "cr:Field",
+                    "name": "Ticket",
+                    "description": "Ticket"
+                },
+                {
+                    "dataType": [
+                        "sc:Float"
+                    ],
+                    "source": {
+                        "fileObject": {
+                            "@id": "tested.csv_fileobject"
+                        },
+                        "extract": {
+                            "column": "Fare"
+                        }
+                    },
+                    "@id": "tested.csv/Fare",
+                    "@type": "cr:Field",
+                    "name": "Fare",
+                    "description": "."
+                },
+                {
+                    "dataType": [
+                        "sc:Text"
+                    ],
+                    "source": {
+                        "fileObject": {
+                            "@id": "tested.csv_fileobject"
+                        },
+                        "extract": {
+                            "column": "Cabin"
+                        }
+                    },
+                    "@id": "tested.csv/Cabin",
+                    "@type": "cr:Field",
+                    "name": "Cabin",
+                    "description": "."
+                },
+                {
+                    "dataType": [
+                        "sc:Text"
+                    ],
+                    "source": {
+                        "fileObject": {
+                            "@id": "tested.csv_fileobject"
+                        },
+                        "extract": {
+                            "column": "Embarked"
+                        }
+                    },
+                    "@id": "tested.csv/Embarked",
+                    "@type": "cr:Field",
+                    "name": "Embarked",
+                    "description": "C = Cherbourg\nQ = Queenstown\nS = Southampton"
+                }
+            ],
+            "@id": "tested.csv",
+            "@type": "cr:RecordSet",
+            "name": "tested.csv",
+            "description": "Tested and gender submission dataset"
+        }
+    ],
+    "keywords": [
+        "audience \u003E beginner",
+        "technique \u003E data visualization",
+        "packages \u003E pandas"
+    ],
+    "isAccessibleForFree": true,
+    "isLiveDataset": true,
+    "includedInDataCatalog": {
+        "@type": "sc:DataCatalog",
+        "name": "Kaggle",
+        "url": "https://www.kaggle.com"
+    },
+    "creator": {
+        "@type": "sc:Person",
+        "name": "Brenda N",
+        "url": "/brendan45774",
+        "image": "https://storage.googleapis.com/kaggle-avatars/thumbnails/2681031-kg.jpg"
+    },
+    "publisher": {
+        "@type": "sc:Organization",
+        "name": "Kaggle",
+        "url": "https://www.kaggle.com/organizations/kaggle",
+        "image": "https://storage.googleapis.com/kaggle-organizations/4/thumbnail.png"
+    },
+    "thumbnailUrl": "https://storage.googleapis.com/kaggle-datasets-images/826163/1798007/9b6d079a17519fa9fe81967fc2fd5ffa/dataset-card.jpg?t=2021-01-21-15-06-41",
+    "dateModified": "2021-12-02T16:11:42.367",
+    "datePublished": "2020-12-31T01:07:18.6326197",
+    "@type": "sc:Dataset",
+    "name": "Titanic dataset",
+    "url": "https://www.kaggle.com/datasets/brendan45774/test-file",
+    "description": "![](https://upload.wikimedia.org/wikipedia/commons/7/76/Titanic_Portside_Diagram.jpg)\n\n### Context\n\nI took the titanic test file and the gender_submission and put them together in excel to make a csv. This is great for making charts to help you visualize. This also will help you know who died or survived. At least 70% right, but its up to you to make it 100% Thanks to the titanic beginners competitions for providing with the data. Please **Upvote** my dataset, it will mean a lot to me. Thank you!\n"
+}

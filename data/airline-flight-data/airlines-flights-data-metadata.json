@@ -1,0 +1,323 @@
+{
+    "@context": {
+        "@language": "en",
+        "@vocab": "https://schema.org/",
+        "citeAs": "cr:citeAs",
+        "column": "cr:column",
+        "conformsTo": "dct:conformsTo",
+        "cr": "http://mlcommons.org/croissant/",
+        "data": {
+            "@id": "cr:data",
+            "@type": "@json"
+        },
+        "dataBiases": "cr:dataBiases",
+        "dataCollection": "cr:dataCollection",
+        "dataType": {
+            "@id": "cr:dataType",
+            "@type": "@vocab"
+        },
+        "dct": "http://purl.org/dc/terms/",
+        "extract": "cr:extract",
+        "field": "cr:field",
+        "fileProperty": "cr:fileProperty",
+        "fileObject": "cr:fileObject",
+        "fileSet": "cr:fileSet",
+        "format": "cr:format",
+        "includes": "cr:includes",
+        "isEnumeration": "cr:isEnumeration",
+        "isLiveDataset": "cr:isLiveDataset",
+        "jsonPath": "cr:jsonPath",
+        "key": "cr:key",
+        "md5": "cr:md5",
+        "parentField": "cr:parentField",
+        "path": "cr:path",
+        "personalSensitiveInformation": "cr:personalSensitiveInformation",
+        "recordSet": "cr:recordSet",
+        "references": "cr:references",
+        "regex": "cr:regex",
+        "repeated": "cr:repeated",
+        "replace": "cr:replace",
+        "sc": "https://schema.org/",
+        "separator": "cr:separator",
+        "source": "cr:source",
+        "subField": "cr:subField",
+        "transform": "cr:transform",
+        "wd": "https://www.wikidata.org/wiki/"
+    },
+    "alternateName": "Analyse Airlines\u0027 Flights Dataset with Python",
+    "conformsTo": "http://mlcommons.org/croissant/1.0",
+    "license": {
+        "@type": "sc:CreativeWork",
+        "name": "Database: Open Database, Contents: Database Contents",
+        "url": "http://opendatacommons.org/licenses/dbcl/1.0/"
+    },
+    "distribution": [
+        {
+            "contentUrl": "https://www.kaggle.com/api/v1/datasets/download/rohitgrewal/airlines-flights-data",
+            "contentSize": "2.327 MB",
+            "encodingFormat": "application/zip",
+            "@id": "archive.zip",
+            "@type": "cr:FileObject",
+            "name": "archive.zip",
+            "description": "Archive containing all the contents of the Airlines Flights Data dataset"
+        },
+        {
+            "contentUrl": "airlines_flights_data.csv",
+            "containedIn": {
+                "@id": "archive.zip"
+            },
+            "encodingFormat": "text/csv",
+            "@id": "airlines_flights_data.csv_fileobject",
+            "@type": "cr:FileObject",
+            "name": "airlines_flights_data.csv",
+            "description": "Flights Data of 6 Airlines within multiple cities. The data is in csv format."
+        }
+    ],
+    "recordSet": [
+        {
+            "field": [
+                {
+                    "dataType": [
+                        "sc:Integer"
+                    ],
+                    "source": {
+                        "fileObject": {
+                            "@id": "airlines_flights_data.csv_fileobject"
+                        },
+                        "extract": {
+                            "column": "index"
+                        }
+                    },
+                    "@id": "airlines_flights_data.csv/index",
+                    "@type": "cr:Field",
+                    "name": "index",
+                    "description": "Index of the Row"
+                },
+                {
+                    "dataType": [
+                        "sc:Text"
+                    ],
+                    "source": {
+                        "fileObject": {
+                            "@id": "airlines_flights_data.csv_fileobject"
+                        },
+                        "extract": {
+                            "column": "airline"
+                        }
+                    },
+                    "@id": "airlines_flights_data.csv/airline",
+                    "@type": "cr:Field",
+                    "name": "airline",
+                    "description": "Name of the Airline"
+                },
+                {
+                    "dataType": [
+                        "sc:Text"
+                    ],
+                    "source": {
+                        "fileObject": {
+                            "@id": "airlines_flights_data.csv_fileobject"
+                        },
+                        "extract": {
+                            "column": "flight"
+                        }
+                    },
+                    "@id": "airlines_flights_data.csv/flight",
+                    "@type": "cr:Field",
+                    "name": "flight",
+                    "description": "Flight Code"
+                },
+                {
+                    "dataType": [
+                        "sc:Text"
+                    ],
+                    "source": {
+                        "fileObject": {
+                            "@id": "airlines_flights_data.csv_fileobject"
+                        },
+                        "extract": {
+                            "column": "source_city"
+                        }
+                    },
+                    "@id": "airlines_flights_data.csv/source_city",
+                    "@type": "cr:Field",
+                    "name": "source_city",
+                    "description": "From where the Flight starts"
+                },
+                {
+                    "dataType": [
+                        "sc:Text"
+                    ],
+                    "source": {
+                        "fileObject": {
+                            "@id": "airlines_flights_data.csv_fileobject"
+                        },
+                        "extract": {
+                            "column": "departure_time"
+                        }
+                    },
+                    "@id": "airlines_flights_data.csv/departure_time",
+                    "@type": "cr:Field",
+                    "name": "departure_time",
+                    "description": "Departure Time of the flight from the source city"
+                },
+                {
+                    "dataType": [
+                        "sc:Text"
+                    ],
+                    "source": {
+                        "fileObject": {
+                            "@id": "airlines_flights_data.csv_fileobject"
+                        },
+                        "extract": {
+                            "column": "stops"
+                        }
+                    },
+                    "@id": "airlines_flights_data.csv/stops",
+                    "@type": "cr:Field",
+                    "name": "stops",
+                    "description": "No. of stops from start to end of a flight"
+                },
+                {
+                    "dataType": [
+                        "sc:Text"
+                    ],
+                    "source": {
+                        "fileObject": {
+                            "@id": "airlines_flights_data.csv_fileobject"
+                        },
+                        "extract": {
+                            "column": "arrival_time"
+                        }
+                    },
+                    "@id": "airlines_flights_data.csv/arrival_time",
+                    "@type": "cr:Field",
+                    "name": "arrival_time",
+                    "description": "Arrival Time of the flight at the destination city"
+                },
+                {
+                    "dataType": [
+                        "sc:Text"
+                    ],
+                    "source": {
+                        "fileObject": {
+                            "@id": "airlines_flights_data.csv_fileobject"
+                        },
+                        "extract": {
+                            "column": "destination_city"
+                        }
+                    },
+                    "@id": "airlines_flights_data.csv/destination_city",
+                    "@type": "cr:Field",
+                    "name": "destination_city",
+                    "description": "Where the flight ends"
+                },
+                {
+                    "dataType": [
+                        "sc:Text"
+                    ],
+                    "source": {
+                        "fileObject": {
+                            "@id": "airlines_flights_data.csv_fileobject"
+                        },
+                        "extract": {
+                            "column": "class"
+                        }
+                    },
+                    "@id": "airlines_flights_data.csv/class",
+                    "@type": "cr:Field",
+                    "name": "class",
+                    "description": "Economy or Business"
+                },
+                {
+                    "dataType": [
+                        "sc:Float"
+                    ],
+                    "source": {
+                        "fileObject": {
+                            "@id": "airlines_flights_data.csv_fileobject"
+                        },
+                        "extract": {
+                            "column": "duration"
+                        }
+                    },
+                    "@id": "airlines_flights_data.csv/duration",
+                    "@type": "cr:Field",
+                    "name": "duration",
+                    "description": "Duration of the flight in Hrs."
+                },
+                {
+                    "dataType": [
+                        "sc:Integer"
+                    ],
+                    "source": {
+                        "fileObject": {
+                            "@id": "airlines_flights_data.csv_fileobject"
+                        },
+                        "extract": {
+                            "column": "days_left"
+                        }
+                    },
+                    "@id": "airlines_flights_data.csv/days_left",
+                    "@type": "cr:Field",
+                    "name": "days_left",
+                    "description": "No. of days left before departure date of a flight"
+                },
+                {
+                    "dataType": [
+                        "sc:Integer"
+                    ],
+                    "source": {
+                        "fileObject": {
+                            "@id": "airlines_flights_data.csv_fileobject"
+                        },
+                        "extract": {
+                            "column": "price"
+                        }
+                    },
+                    "@id": "airlines_flights_data.csv/price",
+                    "@type": "cr:Field",
+                    "name": "price",
+                    "description": "Ticket price of the flight"
+                }
+            ],
+            "@id": "airlines_flights_data.csv",
+            "@type": "cr:RecordSet",
+            "name": "airlines_flights_data.csv",
+            "description": "Flights Data of 6 Airlines within multiple cities. The data is in csv format."
+        }
+    ],
+    "keywords": [
+        "subject \u003E science and technology \u003E computer science \u003E programming \u003E python",
+        "technique \u003E data analytics",
+        "technique \u003E data visualization",
+        "subject \u003E science and technology \u003E transportation \u003E aviation",
+        "subject \u003E people and society \u003E business \u003E travel"
+    ],
+    "isAccessibleForFree": true,
+    "isLiveDataset": true,
+    "includedInDataCatalog": {
+        "@type": "sc:DataCatalog",
+        "name": "Kaggle",
+        "url": "https://www.kaggle.com"
+    },
+    "creator": {
+        "@type": "sc:Person",
+        "name": "Data Science Lovers",
+        "url": "/rohitgrewal",
+        "image": "https://storage.googleapis.com/kaggle-avatars/thumbnails/4994321-kg.png?t=2025-07-26-08-43-39"
+    },
+    "publisher": {
+        "@type": "sc:Organization",
+        "name": "Kaggle",
+        "url": "https://www.kaggle.com/organizations/kaggle",
+        "image": "https://storage.googleapis.com/kaggle-organizations/4/thumbnail.png"
+    },
+    "thumbnailUrl": "https://storage.googleapis.com/kaggle-datasets-images/7964540/12608684/6d32659e5fc913e7276a597fea68c5c9/dataset-card.png?t=2025-07-29-09-17-56",
+    "dateModified": "2025-07-29T09:16:00.463",
+    "datePublished": "2025-07-29T09:16:00.463",
+    "@type": "sc:Dataset",
+    "name": "Airlines Flights Data",
+    "url": "https://www.kaggle.com/datasets/rohitgrewal/airlines-flights-data",
+    "description": "# \uD83D\uDCF9Project Video available on YouTube - https://youtu.be/gu3Ot78j_Gc\n\n--------------------\n\n## Airlines Flights Dataset for Different Cities\n\nThe Flights Booking Dataset of various Airlines is a scraped datewise from a famous website in a structured format. The dataset contains the records of flight travel details between the cities in India. Here, multiple features are present like Source \u0026 Destination City, Arrival \u0026 Departure Time, Duration \u0026 Price of the flight etc.\n\nThis data is available as a CSV file. We are going to analyze this data set using the Pandas DataFrame.\n\nThis analyse will be helpful for those working in Airlines, Travel domain.\n\n-------------------\n\n**Using this dataset, we answered multiple questions with Python in our [Project.](https://youtu.be/gu3Ot78j_Gc)**\n\nQ.1. What are the airlines in the dataset, accompanied by their frequencies?\n\nQ.2. Show Bar Graphs representing the Departure Time \u0026 Arrival Time.\n\nQ.3. Show Bar Graphs representing the Source City \u0026 Destination City.\n\nQ.4. Does price varies with airlines ?\n\nQ.5. Does ticket price change based on the departure time and arrival time?\n\nQ.6. How the price changes with change in Source and Destination?\n\nQ.7. How is the price affected when tickets are bought in just 1 or 2 days before departure?\n\nQ.8. How does the ticket price vary between Economy and Business class?\n\nQ.9. What will be the Average Price of Vistara airline for a flight from Delhi to Hyderabad in Business Class ?\n\n-------------\n\n**These are the main Features/Columns available in the dataset :**\n\n1) Airline: The name of the airline company is stored in the airline column. It is a categorical feature having 6 different airlines.\n\n2) Flight: Flight stores information regarding the plane\u0027s flight code. It is a categorical feature.\n\n3) Source City: City from which the flight takes off. It is a categorical feature having 6 unique cities.\n\n4) Departure Time: This is a derived categorical feature obtained created by grouping time periods into bins. It stores information about the departure time and have 6 unique time labels.\n\n5) Stops: A categorical feature with 3 distinct values that stores the number of stops between the source and destination cities.\n\n6) Arrival Time: This is a derived categorical feature created by grouping time intervals into bins. It has six distinct time labels and keeps information about the arrival time.\n\n7) Destination City: City where the flight will land. It is a categorical feature having 6 unique cities.\n\n8) Class: A categorical feature that contains information on seat class; it has two distinct values: Business and Economy.\n\n9) Duration: A continuous feature that displays the overall amount of time it takes to travel between cities in hours.\n\n10) Days Left: This is a derived characteristic that is calculated by subtracting the trip date by the booking date.\n\n11) Price: Target variable stores information of the ticket price."
+}

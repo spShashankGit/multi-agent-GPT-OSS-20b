@@ -1,0 +1,132 @@
+{
+    "@context": {
+        "@language": "en",
+        "@vocab": "https://schema.org/",
+        "citeAs": "cr:citeAs",
+        "column": "cr:column",
+        "conformsTo": "dct:conformsTo",
+        "cr": "http://mlcommons.org/croissant/",
+        "data": {
+            "@id": "cr:data",
+            "@type": "@json"
+        },
+        "dataBiases": "cr:dataBiases",
+        "dataCollection": "cr:dataCollection",
+        "dataType": {
+            "@id": "cr:dataType",
+            "@type": "@vocab"
+        },
+        "dct": "http://purl.org/dc/terms/",
+        "extract": "cr:extract",
+        "field": "cr:field",
+        "fileProperty": "cr:fileProperty",
+        "fileObject": "cr:fileObject",
+        "fileSet": "cr:fileSet",
+        "format": "cr:format",
+        "includes": "cr:includes",
+        "isEnumeration": "cr:isEnumeration",
+        "jsonPath": "cr:jsonPath",
+        "key": "cr:key",
+        "md5": "cr:md5",
+        "parentField": "cr:parentField",
+        "path": "cr:path",
+        "personalSensitiveInformation": "cr:personalSensitiveInformation",
+        "recordSet": "cr:recordSet",
+        "references": "cr:references",
+        "regex": "cr:regex",
+        "repeated": "cr:repeated",
+        "replace": "cr:replace",
+        "sc": "https://schema.org/",
+        "separator": "cr:separator",
+        "source": "cr:source",
+        "subField": "cr:subField",
+        "transform": "cr:transform",
+        "wd": "https://www.wikidata.org/wiki/"
+    },
+    "alternateName": "Regression predictive modeling machine learning problem from end-to-end Python",
+    "conformsTo": "http://mlcommons.org/croissant/1.0",
+    "license": {
+        "@type": "sc:CreativeWork",
+        "name": "Other (specified in description)"
+    },
+    "distribution": [
+        {
+            "contentUrl": "https://www.kaggle.com/api/v1/datasets/download/vikrishnan/boston-house-prices?datasetVersionNumber=1",
+            "contentSize": "12.838 KB",
+            "md5": "swH4vrrSdMsRJ\u002BcIVvqT5Q==",
+            "encodingFormat": "application/zip",
+            "@id": "archive.zip",
+            "@type": "cr:FileObject",
+            "name": "archive.zip",
+            "description": "Archive containing all the contents of the Boston House Prices dataset"
+        },
+        {
+            "contentUrl": "housing.csv",
+            "containedIn": {
+                "@id": "archive.zip"
+            },
+            "encodingFormat": "application/vnd.ms-excel",
+            "@id": "housing.csv_fileobject",
+            "@type": "cr:FileObject",
+            "name": "housing.csv",
+            "description": "Boston House Price dataset"
+        }
+    ],
+    "recordSet": [
+        {
+            "field": [
+                {
+                    "dataType": [
+                        "sc:Text"
+                    ],
+                    "source": {
+                        "fileObject": {
+                            "@id": "housing.csv_fileobject"
+                        },
+                        "extract": {
+                            "column": "0.00632  18.00   2.310  0  0.5380  6.5750  65.20  4.0900   1  296.0  15.30 396.90   4.98  24.00"
+                        }
+                    },
+                    "@id": "housing.csv/0.00632\u002B\u002B18.00\u002B\u002B\u002B2.310\u002B\u002B0\u002B\u002B0.5380\u002B\u002B6.5750\u002B\u002B65.20\u002B\u002B4.0900\u002B\u002B\u002B1\u002B\u002B296.0\u002B\u002B15.30\u002B396.90\u002B\u002B\u002B4.98\u002B\u002B24.00",
+                    "@type": "cr:Field",
+                    "name": "0.00632  18.00   2.310  0  0.5380  6.5750  65.20  4.0900   1  296.0  15.30 396.90   4.98  24.00",
+                    "description": "        - CRIM     per capita crime rate by town\n        - ZN       proportion of residential land zoned for lots over 25,000 sq.ft.\n        - INDUS    proportion of non-retail business acres per town\n        - CHAS     Charles River dummy variable (= 1 if tract bounds river; 0 otherwise)\n        - NOX      nitric oxides concentration (parts per 10 million)\n        - RM       average number of rooms per dwelling\n        - AGE      proportion of owner-occupied units built prior to 1940\n        - DIS      weighted distances to five Boston employment centres\n        - RAD      index of accessibility to radial highways\n        - TAX      full-value property-tax rate per $10,000\n        - PTRATIO  pupil-teacher ratio by town\n        - B        1000(Bk - 0.63)^2 where Bk is the proportion of blacks by town\n        - LSTAT    % lower status of the population\n        - MEDV     Median value of owner-occupied homes in $1000\u0027s"
+                }
+            ],
+            "@id": "housing.csv",
+            "@type": "cr:RecordSet",
+            "name": "housing.csv",
+            "description": "Boston House Price dataset"
+        }
+    ],
+    "version": 1,
+    "keywords": [
+        "subject \u003E science and technology \u003E computer science",
+        "subject \u003E science and technology \u003E computer science \u003E programming"
+    ],
+    "isAccessibleForFree": true,
+    "includedInDataCatalog": {
+        "@type": "sc:DataCatalog",
+        "name": "Kaggle",
+        "url": "https://www.kaggle.com"
+    },
+    "creator": {
+        "@type": "sc:Person",
+        "name": "Manimala",
+        "url": "/vikrishnan",
+        "image": "https://storage.googleapis.com/kaggle-avatars/thumbnails/1136135-kg.JPG"
+    },
+    "publisher": {
+        "@type": "sc:Organization",
+        "name": "Kaggle",
+        "url": "https://www.kaggle.com/organizations/kaggle",
+        "image": "https://storage.googleapis.com/kaggle-organizations/4/thumbnail.png"
+    },
+    "thumbnailUrl": "https://storage.googleapis.com/kaggle-datasets-images/1815/3139/default-backgrounds/dataset-card.png",
+    "dateModified": "2017-08-03T17:06:12.697",
+    "datePublished": "2017-08-03T17:06:12.68",
+    "@type": "sc:Dataset",
+    "name": "Boston House Prices",
+    "url": "https://www.kaggle.com/datasets/vikrishnan/boston-house-prices/versions/1",
+    "description": "### Context\n\nTo Explore more on Regression Algorithm\n\n\n### Content\n\n Each record in the database describes a Boston suburb or town. The data was drawn from the Boston Standard Metropolitan Statistical Area (SMSA) in 1970. The attributes are de\uFB01ned as follows (taken from the UCI Machine Learning Repository1): CRIM: per capita crime rate by town\n2. ZN: proportion of residential land zoned for lots over 25,000 sq.ft.\n3. INDUS: proportion of non-retail business acres per town\n4. CHAS: Charles River dummy variable (= 1 if tract bounds river; 0 otherwise)\n5. NOX: nitric oxides concentration (parts per 10 million)\n1https://archive.ics.uci.edu/ml/datasets/Housing\n123\n20.2. Load the Dataset 124\n6. RM: average number of rooms per dwelling\n7. AGE: proportion of owner-occupied units built prior to 1940\n8. DIS: weighted distances to \uFB01ve Boston employment centers\n9. RAD: index of accessibility to radial highways\n10. TAX: full-value property-tax rate per $10,000\n11. PTRATIO: pupil-teacher ratio by town 12. B: 1000(Bk\u22120.63)2 where Bk is the proportion of blacks by town 13. LSTAT: % lower status of the population\n14. MEDV: Median value of owner-occupied homes in $1000s\nWe can see that the input attributes have a mixture of units.\n\n\n### Acknowledgements\n\nThanks to Dr.Jason"
+}
