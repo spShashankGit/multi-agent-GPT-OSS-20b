@@ -16,7 +16,7 @@ class HousePrince:
                 "CRIM", "ZN", "INDUS", "CHAS", "NOX", "RM", "AGE", "DIS", "RAD",
                 "TAX", "PTRATIO", "B", "LSTAT", "MEDV"
             ]
-            return pd.read_csv(self.file_path, delim_whitespace=True, names=column_names)
+            return pd.read_csv(self.file_path, sep=r'\s+', names=column_names)
         except FileNotFoundError:
             print(f"Error: The file {self.file_path} was not found. Please ensure it is in the correct directory.")
             return None
