@@ -5,6 +5,7 @@ from langchain.agents import AgentExecutor, create_react_agent
 from langchain.tools import tool
 from ddgs import DDGS
 from langchain import hub
+from multi_agent_tools import multi_agent_tools
 
 # 1. Define the LLM (Large Language Model)
 # We instantiate the LLM. The agent will use this model for reasoning.
@@ -28,8 +29,10 @@ def ddg_search_tool(query: str) -> str:
         )
     return formatted_results
 
+# Combine web search with multi-agent data tools
 tools = [
-    ddg_search_tool
+    ddg_search_tool,
+    *multi_agent_tools  # Add all the data analysis tools
 ]
 
 # 3. Define the Agent's Prompt
@@ -57,23 +60,56 @@ agent_executor = AgentExecutor(agent=agent,
                                handle_parsing_errors=True,
                                max_iterations=2)
 
-# 6. Run the Agent with a "Hello World" question
-# This is a task that the agent cannot solve with just its internal knowledge.
-# It MUST use the web search tool to find the answer.
-response = agent_executor.invoke({"input": "What is the weather in Paris right now?"})
+# 6. Multi-Agent Data Analysis Demo
+# This demonstrates the multi-agent system analyzing both datasets
+if __name__ == "__main__":
+    print("=== Multi-Agent Data Analysis System ===")
+    print("Available capabilities:")
+    print("1. Boston House Prices Analysis")
+    print("2. Airline Flights Data Analysis")
+    print("3. Web Search for additional context")
+    print()
+    
+    # Example queries for different data analysis scenarios
+    sample_queries = [
+        "Find the average price of houses near the Charles River (CHAS == 1) in the Boston dataset",
+        "What are the top 3 most expensive airlines by average ticket price?",
+        "Show me all direct flights (zero stops) from Delhi to Mumbai",
+        "Find properties in Boston with more than 7 rooms and low crime rate (CRIM < 1)"
+    ]
+    
+    print("Sample queries you can ask:")
+    for i, query in enumerate(sample_queries, 1):
+        print(f"{i}. {query}")
+    
+    print("\n" + "="*50)
+    print("Starting interactive mode...")
+    print("Type 'quit' to exit")
+    print("="*50 + "\n")
+    
+    while True:
+        user_input = input("Ask a question about Boston house prices or airline flights: ")
+        if user_input.lower() in ['quit', 'exit', 'q']:
+            break
+            
+        try:
+            response = agent_executor.invoke({"input": user_input})
+            print(f"\n--- Response ---")
+            print(response["output"])
+            print("\n" + "-"*50 + "\n")
+        except Exception as e:
+            print(f"Error: {e}")
+            print("Please try rephrasing your question.\n")
 
-# 7. Print the final answer
-print("\n--- Final Response ---")
-print(response["output"])
 
-
+# Legacy code kept for reference - but now we have a proper multi-agent system above
 # ------------------
 # Initialize the tools with their data and metadata paths
-brooklyn_tool = BrooklynTaxiTool(metadata_path, data_path)
-covid_tool = CovidDataTool(metadata_path, data_path)
-correlator_tool = CorrelatorTool()
+# brooklyn_tool = BrooklynTaxiTool(metadata_path, data_path)
+# covid_tool = CovidDataTool(metadata_path, data_path)
+# correlator_tool = CorrelatorTool()
 
 # Create each worker agent
-brooklyn_agent = AgentExecutor(...)  # This agent uses the brooklyn_tool
-covid_agent = AgentExecutor(...)      # This agent uses the covid_tool
-correlator_agent = AgentExecutor(...) # This agent uses the correlator_tool
+# brooklyn_agent = AgentExecutor(...)  # This agent uses the brooklyn_tool
+# covid_agent = AgentExecutor(...)      # This agent uses the covid_tool
+# correlator_agent = AgentExecutor(...) # This agent uses the correlator_tool
