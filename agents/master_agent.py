@@ -6,6 +6,34 @@ from langchain.tools import tool
 from ddgs import DDGS
 from langchain import hub
 
+"""
+ARCHITECTURE DECISION EXAMPLE:
+
+This file demonstrates BOTH multi-agent and multi-tool patterns to illustrate 
+when each approach is appropriate. See ARCHITECTURE_GUIDE.md for detailed guidance.
+
+MULTI-TOOL EXAMPLE (Lines 18-67):
+- Single agent with DuckDuckGo search tool
+- WHY: Simple task (answer questions), sequential processing, single domain
+- USE CASE: Quick queries that need web search capability
+
+MULTI-AGENT EXAMPLE (Lines 70-79): 
+- Master agent orchestrating specialized data agents
+- WHY: Multiple domains (taxi, health, statistics), independent processing, specialized expertise
+- USE CASE: Complex data analysis requiring domain-specific agents
+"""
+
+# ------------------
+# MULTI-TOOL ARCHITECTURE EXAMPLE  
+# ------------------
+# This section demonstrates when to use a single agent with multiple tools
+# Decision factors that led to multi-tool choice:
+# ✓ Single domain: web search and question answering
+# ✓ Sequential processing: search then format response
+# ✓ Simple tool interface with shared context
+# ✓ Low complexity task suitable for single agent
+# ✓ Rapid prototyping and development simplicity
+
 # 1. Define the LLM (Large Language Model)
 # We instantiate the LLM. The agent will use this model for reasoning.
 llm = ChatOpenAI(temperature=0, 
@@ -68,12 +96,22 @@ print(response["output"])
 
 
 # ------------------
+# MULTI-AGENT ARCHITECTURE EXAMPLE
+# ------------------
+# This section demonstrates when to use multiple specialized agents
+# Decision factors that led to multi-agent choice:
+# ✓ 3 distinct domains: transportation data, health data, statistical analysis  
+# ✓ Independent data sources with different formats and processing needs
+# ✓ Parallel processing opportunities (agents can work simultaneously)
+# ✓ Clear separation of concerns and expertise boundaries
+# ✓ Different computational requirements per domain
+
 # Initialize the tools with their data and metadata paths
 brooklyn_tool = BrooklynTaxiTool(metadata_path, data_path)
 covid_tool = CovidDataTool(metadata_path, data_path)
 correlator_tool = CorrelatorTool()
 
-# Create each worker agent
+# Create each worker agent with specialized capabilities
 brooklyn_agent = AgentExecutor(...)  # This agent uses the brooklyn_tool
 covid_agent = AgentExecutor(...)      # This agent uses the covid_tool
 correlator_agent = AgentExecutor(...) # This agent uses the correlator_tool
